@@ -1,44 +1,56 @@
-// tady je místo pro náš program
+//vlastnosti a metody
 
-//const address = 'Pod Kaštany 31, 123 11 Horní Dlouhonosy'
-/*
+let title='pan prstenu'
+console.log(title.length)
+console.log(title.toUpperCase())
+console.log(title.slice(0,5))
+console.log(title.slice(title.length-5,title.length))
+
+//e-maily
+
+let email=prompt('zadej e-mail')
+let atIndex=email.indexOf('@')
+let celejmeno=email.slice(0,atIndex)
+let domena=email.slice(atIndex+1,email.length)
+const parsedEmail= {
+    userName:celejmeno,
+    domain:domena,
+}
+
+let Pemail=document.querySelector('.email')
+Pemail.innerHTML='Email:' + email
+
+let PatIndex=document.querySelector('.atIndex')
+PatIndex.innerHTML='atIndex:' + atIndex
+
+let Pcelejmeno=document.querySelector('.celejmeno')
+Pcelejmeno.innerHTML='cele jmeno:' + celejmeno
+
+let Pdomena=document.querySelector('.domena')
+Pdomena.innerHTML='domena:' + domena
+
+//dorucovani
+
+let adresaUlice=prompt('zadej ulici')
+let adresacislodomu=prompt('zadej cislo domu')
+let adresamesto=prompt('zadej mesto')
+let adresaPSC=prompt('zadej PSC')
+ 
 const adresa = {
-  ulice: 'Pod Kaštany',
-  cislo: 31,
-  mesto: 'Horní Dlouhonosy',
-  psc: '123 11'
-}
-*/
+    ulice:adresaUlice,
+    cislodomu:adresacislodomu,
+    mesto:adresamesto,
+    psc:adresaPSC,
+};
 
-const address = {
-  streetName: 'Pod Kaštany',
-  number: 31,
-  city: 'Horní Dlouhonosy',
-  postalCode: '123 11',
-}
+const { ulice,cislodomu,mesto,psc } = adresa;
 
-// let vstupUzivatel = prompt("Zadej správné číslo domu:")
-// address.number = Number(vstupUzivatel)
+let Padresa=document.querySelector('.adresa')
 
-const user1 = {
-  fullName: 'Lubomír Větvička',
-  login: 'lubos',
-  address: {
-    streetName: 'Pod Kaštany',
-    number: 31,
-    city: 'Horní Dlouhonosy',
-    postalCode: '123 11'
-  },
-  cartItems: 1
-}
-
-// DESTRUKTUROVÁNÍ
-
-const product = {
-  name: 'Mlýnek na kávu',
-  price: 520,
-  currency: 'Kč'
-}
-
-const {name, price, currency} = product
+Padresa.innerHTML= (
+  `<address>
+	<p>${ulice} ${cislodomu}</p>
+	<p>${psc} ${mesto}</p>
+  </address>`
+)
 
